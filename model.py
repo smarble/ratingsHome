@@ -24,6 +24,11 @@ class User(db.Model):
     age = db.Column(db.Integer, nullable=True)
     zipcode = db.Column(db.String(15), nullable=True)
 
+    def __repr__(self):
+        """Provide helpful representation when printed."""
+
+        return f"User user_id={self.user_id} email={self.email}"
+
 
 # Put your Movie and Rating model classes here.
 class Movie(db.Model):
@@ -39,13 +44,13 @@ class Movie(db.Model):
 
 
 
-    class Rating(db.Model):
+class Rating(db.Model):
     """User of ratings website."""
     # instances of this class will be stored in a table named users
     __tablename__ = "ratings"
 
     rating_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    movie_id = db.Column(db.Integer, nullable=True, foreigh_key)
+    movie_id = db.Column(db.Integer, nullable=True)
     user_id = db.Column(db.Integer, nullable=True)
     score = db.Column(db.Integer, nullable=True)
     
