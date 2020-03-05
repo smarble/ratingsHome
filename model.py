@@ -38,6 +38,7 @@ class Movie(db.Model):
 
     movie_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     title = db.Column(db.String(64), nullable=True)
+    # data will need to be converted from string to datetime objects before they can be entered into this key. Do so with Python's datetime module. Ex: datetime.strptime(str, format)
     released_at = db.Column(db.DateTime , nullable=True)
     imbd_url = db.Column(db.String, nullable=True)
     

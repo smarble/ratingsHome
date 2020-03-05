@@ -25,7 +25,7 @@ def load_users():
         # in your source list
         user_id, age, gender, occupation, zipcode = row.split("|")
 
-        # make a new instance/object from the User class, name it user
+        # make a new instance/object from the User class, name it user. Usually not necessary to hard code a primary key. We are bc users are used as foreign keys in the ratings table.
         user = User(user_id=user_id,
                     age=age,
                     zipcode=zipcode)
@@ -42,7 +42,7 @@ def load_movies():
     # see below this function for my first, simpler solution. That solution does not address the date/time issue.
 
     print("movies")
-
+    # tuple unpacking. results of function is being unpacked into the variables i and row as tuples.
     for i, row in enumerate(open(movie_filename)):
         row = row.rstrip()
 
