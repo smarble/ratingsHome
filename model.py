@@ -1,4 +1,3 @@
-# testing 123
 """Models and database functions for Ratings project."""
 
 from flask_sqlalchemy import SQLAlchemy
